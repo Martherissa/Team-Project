@@ -14,29 +14,19 @@ We have done some initial research and found Spoonacular API useful for generati
 
 ## Project Schedule
 
-### 1st week
+### 1st Week (April 8th -- April 14th)
 
-Discussing detail of the project with potential APIs recommended and finishing up planning the workflow to prioritize tasks.
+Discussing detail of the project with potential APIs recommended and finishing up planning the workflow to prioritize tasks. Start coding functions needed and incorporating APIs while constantly experiment and find new APIs to use.
 
-### 2nd week
+### 2nd week (April 15th -- April 21st)
 
-Start coding functions needed and incorporating APIs while constantly experiment and find new APIs to use.
+Start woking on web app and initiallse all the features. Continue web app coding and adding additional features if viable. 
 
-### 3rd week
 
-Start woking on web app and initiallse all the features.
+### 3rd week (April 22th -- April 27st)
 
-### 4th week
+Adding visual features and interactive interface with CSS. Finishing up all features with visually appealing interfaces.
 
-Continue web app coding and adding additional features if viable.
-
-### 5th week
-
-Adding visual features and interactive interface with CSS.
-
-### 6th week
-
-Finishing up all features with visually appealing interfaces.
 
 ## Collaboration Plan
 
