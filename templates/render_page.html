@@ -5,9 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Please Choose Your Recipe</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        p {
+            font-family: 'Arial', sans-serif;
+            font-size: 1.5rem;
+            color: #0e6ba8;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: #ff3e41;
+            /* Darker Disney red on hover */
+        }
+    </style>
+
 </head>
 
 <body>
+    <img src="https://images.fanpop.com/images/image_uploads/Ratatouille-pixar-268828_1024_971.jpg" , height="200">
     <p>With {{input}}, you can choose from recipes below:</p>
 
     <form action="/recipe_info" method="post">

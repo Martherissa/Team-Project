@@ -4,12 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Generator</title>
+    <title>Ratatouille Said Hi</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #abd6f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-family: 'Disney', cursive;
+            /* Disney font */
+            font-size: 3rem;
+            color: #0e6ba8;
+            /* Disney blue */
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            /* Disney red */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        button:hover {
+            background-color: #ff3e41;
+            /* Darker Disney red on hover */
+        }
+
+        img {
+            max-width: 100%;
+            height: 300;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Hi, please input ingredients you have on hand and we will generate a list of recipes for you to choose!</h1>
+    <img src="https://th.bing.com/th/id/R.7263a84dea6f16a5952b4045716b4fe4?rik=eF%2bCKlTaCwYkOA&riu=http%3a%2f%2fimages-site-chefsimon-eu.s3-eu-west-1.amazonaws.com%2farticles%2fcaef341c-0ba6-43c3-ad5c-1c8a8c419d7a%2fratatouille.png&ehk=xrT5jcEa8X%2b0bL2SH9Kxmb4f%2f6NxTgUcu9ngXMkqeYM%3d&risl=&pid=ImgRaw&r=0"
+        height="300">
+    <h1>Hi I am Ratatouille!</h1>
+
+    <h2>Please tell me ingredients you have on hand and I will help generate a list of recipes for
+        you to choose from!</h2>
 
     <form action="/recipe" method="post">
         <label for="ingredients">Enter ingredients you have:</label>
