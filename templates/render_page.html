@@ -4,12 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Result</title>
+    <title>Please Choose Your Recipe</title>
 </head>
 
 <body>
     <p>With {{input}}, you can choose from recipes below:</p>
-    <p>{{result}}</p>
+
+    <ul>
+        {% for recipe in result %}
+        <li><button onclick="chooseRecipe('{{ recipe }}')">{{ recipe }}</button></li>
+        {% endfor %}
+    </ul>
+
+    <script>
+        function chooseRecipe(name) {
+            localStorage.setItem('chosenRecipe', name)
+        }
+    </script>
 </body>
 
 </html>
