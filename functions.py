@@ -50,7 +50,7 @@ def get_recipes_id_by_ingredient(ingredient):
     return dict
 
 
-pprint.pprint(get_recipes_id_by_ingredient(food))
+# pprint.pprint(get_recipes_id_by_ingredient(food))
 
 
 def search_recipes_by_ingredient(ingredient):
@@ -69,7 +69,7 @@ def search_recipes_by_ingredient(ingredient):
 
 # Test
 recipes = search_recipes_by_ingredient(food)
-pprint.pprint(recipes)
+# pprint.pprint(recipes)
 
 
 def get_recipet_id(recipe_name, ingredients):
@@ -81,7 +81,7 @@ def get_recipet_id(recipe_name, ingredients):
             return dict[names]
 
 
-print(get_recipet_id("Easy Homemade Apple Fritters", food))
+# print(get_recipet_id("Easy Homemade Apple Fritters", food))
 
 
 def get_recipe_info(recipe_name, ingredient):
@@ -115,4 +115,5 @@ def get_recipe_steps(recipe_name, ingredient):
     return steps
 
 
-pprint.pprint(get_recipe_steps("Easy Homemade Apple Fritters", food))
+# pprint.pprint(get_recipe_steps("Easy Homemade Apple Fritters", food))
+
