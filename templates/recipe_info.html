@@ -9,7 +9,11 @@
 
 <body>
     <h1>The recipe you choosed is {{recipeName}}, and here are more information about the recipe:</h1>
-    <p>{{detail}}</p>
+    <ul>
+        {% for key, value in detail.items() %}
+        <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
 
 </body>
 

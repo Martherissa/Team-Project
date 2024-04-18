@@ -1,5 +1,5 @@
 from flask import Flask, redirect, render_template, request, url_for
-from functions import search_recipes_by_ingredient, get_recipet_id, get_recipe_info
+from functions import search_recipes_by_ingredient, get_recipe_steps
 
 
 app = Flask(__name__, template_folder="templates")
@@ -21,13 +21,12 @@ def find_recipe():
     recipes = search_recipes_by_ingredient(ingredients)
     return render_template("render_page.html", result=recipes, input=ingredients)
 
-
-@app.post("/recipe")
+@app.post("/recipe_info")
 def recipe_info():
-    choice = request.get("ChosenRecipe")
+    choice = request.form.get("ChosenRecipe")  # Corrected from request.get
 
     ingredients = request.form["ingredients"]
-    instructions = get_recipe_info(choice, ingredients)
+    instructions = get_recipe_steps(choice, ingredients)
     return render_template("recipe_info.html", recipeName=choice, detail=instructions)
 
 

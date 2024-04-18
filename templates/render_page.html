@@ -10,17 +10,14 @@
 <body>
     <p>With {{input}}, you can choose from recipes below:</p>
 
-    <ul>
+    <form action="/recipe_info" method="post">
         {% for recipe in result %}
-        <li><button onclick="chooseRecipe('{{ recipe }}')">{{ recipe }}</button></li>
+        <button type="submit" name="ChosenRecipe" value="{{ recipe }}">{{ recipe }}</button>
+        <br>
         {% endfor %}
-    </ul>
+        <input type="hidden" name="ingredients" value="{{ input }}">
+    </form>
 
-    <script>
-        function chooseRecipe(name) {
-            localStorage.setItem('chosenRecipe', name)
-        }
-    </script>
 </body>
 
 </html>
