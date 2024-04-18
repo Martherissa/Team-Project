@@ -1,5 +1,5 @@
 from flask import Flask, redirect, render_template, request, url_for
-import functions
+from functions import search_recipes_by_ingredient
 
 
 app = Flask(__name__, template_folder="templates")
@@ -17,8 +17,9 @@ def get_recipe():
 
 @app.post("/recipe")
 def nearest_mbta():
-    place_name = request.form["recipe"]
-    return render_template("render_page.html")
+    ingredients = request.form["ingredients"]
+    recipes = search_recipes_by_ingredient(ingredients)
+    return render_template("render_page.html", result=recipes, input=ingredients)
 
 
 # This handles any 404 error for the website
