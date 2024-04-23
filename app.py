@@ -1,5 +1,11 @@
 from flask import Flask, redirect, render_template, request, url_for
-from functions import search_recipes_by_ingredient, get_recipe_steps, get_recipe_image, get_recipe_summary, get_recipe_ingredients
+from functions import (
+    search_recipes_by_ingredient,
+    get_recipe_steps,
+    get_recipe_image,
+    get_recipe_summary,
+    get_recipe_ingredients,
+)
 
 
 app = Flask(__name__, template_folder="templates")
@@ -21,9 +27,10 @@ def find_recipe():
     recipes = search_recipes_by_ingredient(ingredients)
     return render_template("render_page.html", result=recipes, input=ingredients)
 
+
 @app.post("/recipe_info")
 def recipe_info():
-    choice = request.form.get("ChosenRecipe")  
+    choice = request.form.get("ChosenRecipe")
 
     ingredients = request.form["ingredients"]
     instructions = get_recipe_steps(choice, ingredients)
@@ -31,7 +38,14 @@ def recipe_info():
     images = get_recipe_image(choice, ingredients)
     summaries = get_recipe_summary(choice, ingredients)
 
-    return render_template("recipe_info.html", recipeName=choice, detail=instructions, summary = summaries, image = images, all_ingredient = all_ingredients)
+    return render_template(
+        "recipe_info.html",
+        recipeName=choice,
+        detail=instructions,
+        summary=summaries,
+        image=images,
+        all_ingredient=all_ingredients,
+    )
 
 
 # This handles any 404 error for the website
@@ -40,7 +54,7 @@ def page_not_found(error):
     return (
         render_template(
             "error.html",
-            error_message="There is an error.",
+            error_message="There is an error",
         ),
         404,
     )

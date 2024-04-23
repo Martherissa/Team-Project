@@ -25,6 +25,21 @@
         margin-bottom: 20px;
     }
 
+    h2 {
+        font-family: 'Arial', sans-serif;
+        font-size: 1.8rem;
+        color: #008ae7;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    div {
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+        margin-bottom: 20px;
+
+    }
+
     ul {
         list-style-type: none;
         padding: 0;
@@ -47,20 +62,22 @@
     <h1>The recipe you choosed is {{recipeName}}, and here are more information about the recipe:</h1>
     <img src={{image}} height="200">
 
+    <!-- div create a block where we can insert the html of summary  -->
     <div id="summary">
         <!-- This line reads summary as html and format automatically using CSS -->
         {{summary | safe}}
+        <!-- |safe is a filter to ensure the html of summary is rendered sucessfully -->
     </div>
 
+    <h2>All ingredients you will need:</h2>
     <ul>
-        <h2>All ingredients you will need:</h2>
         {% for key, value in all_ingredient.items() %}
         <li>{{ key }}: {{ value }}</li>
         {% endfor %}
     </ul>
 
+    <h2>Step by step instructions:</h2>
     <ul>
-        <h2>Step by step instructions:</h2>
         {% for key, value in detail.items() %}
         <li>{{ key }}: {{ value }}</li>
         {% endfor %}
