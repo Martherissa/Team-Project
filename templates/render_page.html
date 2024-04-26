@@ -15,6 +15,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            width: auto;
         }
 
         h1 {
@@ -57,9 +58,15 @@
     <form action="/recipe_info" method="post">
         {% for recipe in result %}
         <button type="submit" name="ChosenRecipe" value="{{ recipe }}">{{ recipe }}</button>
+        <!-- submit means after clicking the button, name of the recipe chosen is submitted as a input named as
+            "ChosenRecipe" that can be reference in next webpage-->
         <br>
+        <!-- br indicates a bland line -->
         {% endfor %}
         <input type="hidden" name="ingredients" value="{{ input }}">
+        <!-- The line above stored the inputed ingredient information extracted from the previouse page into this page
+        and named it as "ingredients", so if we want to extract ingredients information in later web pages, we can treat it as
+        input from this page same we "ChosenRecipe" -->
     </form>
 
     <a href="{{ url_for('hello') }}">Start over</a>

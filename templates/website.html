@@ -16,6 +16,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            width: auto;
         }
 
         h1 {
@@ -86,6 +87,8 @@
 
     <form action="/recipe" method="post">
         <p>Remember to seperate different ingredients by comma!</p>
+        <!-- The line below treat all the inputed ingredients as a variable called "ingredients"
+        that can be extracted by the next page (with label function) -->
         <label for="ingredients">Enter ingredients you have:</label>
         <input type="text" name="ingredients">
         <button type="submit">Submit</button>

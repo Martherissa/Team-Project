@@ -34,10 +34,12 @@ def hello():
     return render_template("website.html", name=username, APIkey=api_key)
 
 
-@app.get("/recipe")
-def get_recipe():
-    api_key = session.get("APIkey")
-    return render_template("website.html", APIkey=api_key)
+# # This chunck is no longer needed as we already stored the API key in session and there is not need to
+# # defined any "get" action from here
+# @app.get("/recipe")
+# def get_recipe():
+#     api_key = session.get("APIkey")
+#     return render_template("website.html", APIkey=api_key)
 
 
 @app.post("/recipe")

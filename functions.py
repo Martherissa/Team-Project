@@ -76,9 +76,6 @@ def get_recipet_id(recipe_name, ingredients, API_KEY):
             return dict[names]
 
 
-# print(get_recipet_id("Easy Homemade Apple Fritters", food))
-
-
 def get_recipe_info(recipe_name, ingredient, API_KEY):
 
     id = get_recipet_id(recipe_name, ingredient, API_KEY)
