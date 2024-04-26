@@ -5,7 +5,7 @@ import pprint
 import urllib.request
 
 
-API_KEY = "d1d0ac42e23b49e887fce1fd9d410955"
+MY_API_KEY = "d1d0ac42e23b49e887fce1fd9d410955"
 Spoonacular_URL = "https://api.spoonacular.com/recipes/findByIngredients"
 
 # Setting set ingredient
@@ -28,7 +28,7 @@ def get_json(url: str) -> dict:
 
 
 # pprint.pprint(get_json(Spoonacular_URL))
-def get_recipes_id_by_ingredient(ingredient):
+def get_recipes_id_by_ingredient(ingredient, API_KEY):
     """
     Search recipe by ingredients
     Return a dictionary with recipe name as key and id as content
@@ -53,12 +53,12 @@ def get_recipes_id_by_ingredient(ingredient):
 # pprint.pprint(get_recipes_id_by_ingredient(food))
 
 
-def search_recipes_by_ingredient(ingredient):
+def search_recipes_by_ingredient(ingredient, API_KEY):
     """
     Search recipes by inputing ingredient seperated by commas from Spoonacular API
     Returns a list of recipes names
     """
-    data = get_recipes_id_by_ingredient(ingredient)
+    data = get_recipes_id_by_ingredient(ingredient, API_KEY)
 
     list = []
 
@@ -67,8 +67,8 @@ def search_recipes_by_ingredient(ingredient):
     return list
 
 
-def get_recipet_id(recipe_name, ingredients):
-    dict = get_recipes_id_by_ingredient(ingredients)
+def get_recipet_id(recipe_name, ingredients, API_KEY):
+    dict = get_recipes_id_by_ingredient(ingredients, API_KEY)
 
     for names in dict.keys():
 
@@ -79,9 +79,9 @@ def get_recipet_id(recipe_name, ingredients):
 # print(get_recipet_id("Easy Homemade Apple Fritters", food))
 
 
-def get_recipe_info(recipe_name, ingredient):
+def get_recipe_info(recipe_name, ingredient, API_KEY):
 
-    id = get_recipet_id(recipe_name, ingredient)
+    id = get_recipet_id(recipe_name, ingredient, API_KEY)
 
     url = f"https://api.spoonacular.com/recipes/{id}/information?apiKey={API_KEY}"
 
@@ -91,13 +91,13 @@ def get_recipe_info(recipe_name, ingredient):
     return data
 
 
-def get_recipe_steps(recipe_name, ingredient):
+def get_recipe_steps(recipe_name, ingredient, API_KEY):
     '''
     Inputs recipe name and available ingredient 
     Returns a dictionary with step number as key and instructions as items
     '''
 
-    data = get_recipe_info(recipe_name, ingredient)
+    data = get_recipe_info(recipe_name, ingredient, API_KEY)
 
     steps = {}
 
@@ -107,13 +107,13 @@ def get_recipe_steps(recipe_name, ingredient):
     return steps
 
 
-def get_recipe_ingredients(recipe_name, ingredient):
+def get_recipe_ingredients(recipe_name, ingredient, API_KEY):
     '''
     Inputs recipe name and available ingredient 
     Returns a list of all ingredients needed and measurement in two forms
     '''
 
-    data = get_recipe_info(recipe_name, ingredient)
+    data = get_recipe_info(recipe_name, ingredient, API_KEY)
 
     ingredients_dict = {}
 
@@ -130,13 +130,13 @@ def get_recipe_ingredients(recipe_name, ingredient):
     return ingredients_dict
 
 
-def get_recipe_summary(recipe_name, ingredient):
+def get_recipe_summary(recipe_name, ingredient, API_KEY):
     '''
     Inputs recipe name and available ingredient 
     Returns the summary of the recipe
     '''
 
-    data = get_recipe_info(recipe_name, ingredient)
+    data = get_recipe_info(recipe_name, ingredient, API_KEY)
 
     summary = data["summary"]
 
@@ -144,13 +144,13 @@ def get_recipe_summary(recipe_name, ingredient):
 
 
 
-def get_recipe_image(recipe_name, ingredient):
+def get_recipe_image(recipe_name, ingredient, API_KEY):
     '''
     Inputs recipe name and available ingredient 
     Returns the image url of the recipe
     '''
 
-    data = get_recipe_info(recipe_name, ingredient)
+    data = get_recipe_info(recipe_name, ingredient, API_KEY)
 
     picture = data["image"]
 
@@ -171,7 +171,7 @@ def main():
 
     # print(get_recipe_summary("Easy Homemade Apple Fritters", food))
 
-    print(get_recipe_image("Easy Homemade Apple Fritters", food))
+    # print(get_recipe_image("Easy Homemade Apple Fritters", food))
     
 
 if __name__ == "__main__":

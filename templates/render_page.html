@@ -7,7 +7,7 @@
     <title>Please Choose Your Recipe</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Disney', cursive;
             background-color: #abd6f4;
             margin: 0;
             padding: 0;
@@ -17,9 +17,8 @@
             justify-content: center;
         }
 
-        p {
-            font-family: 'Arial', sans-serif;
-            font-size: 1.5rem;
+        h1 {
+            font-size: 2rem;
             color: #0e6ba8;
             text-align: center;
             margin-bottom: 20px;
@@ -50,11 +49,10 @@
 </head>
 
 <body>
-    <img src="https://th.bing.com/th/id/R.0e99969305f2d3013fd3f19d2cc2ed49?rik=%2f4jbw09GTqckFA&riu=http%3a%2f%2fimages.fanpop.com%2fimages%2fimage_uploads%2fRatatouille-pixar-268828_1024_971.jpg&ehk=PAr7qhxEfH0zbweBGDjC9JyLouEr1mDI6aCdSjlpgBM%3d&risl=&pid=ImgRaw&r=0"
-        height="200">
-    <!-- <img src="png-transparent-ratatouille-emile-remy-pixar-animated-film-ratatuille-mammal-food-mouse-removebg-preview.png"
-        height="200"> -->
-    <p>With {{input}}, you can choose from recipes below:</p>
+    <img src="https://th.bing.com/th/id/R.6dd693be6092e02d28d1e97af453ef56?rik=eSEzOez2Wl3xFA&riu=http%3a%2f%2ffr.web.img6.acsta.net%2fnewsv7%2f20%2f05%2f11%2f17%2f14%2f2344774.jpg&ehk=yMah%2fzhIfTfNv4aph1ugkgBqyZclv2XHbl39DgpSEWA%3d&risl=&pid=ImgRaw&r=0"
+        height="300">
+
+    <h1>With {{input}}, you can choose from recipes below:</h1>
 
     <form action="/recipe_info" method="post">
         {% for recipe in result %}
