@@ -27,7 +27,7 @@ def get_json(url: str) -> dict:
     return response_data
 
 
-# pprint.pprint(get_json(Spoonacular_URL))
+
 def get_recipes_id_by_ingredient(ingredient, API_KEY):
     """
     Search recipe by ingredients
@@ -162,17 +162,18 @@ def get_recipe_image(recipe_name, ingredient, API_KEY):
 def main():
     food = "apple, flour, milk"
 
-    # recipes = search_recipes_by_ingredient(food)
+    # recipes = search_recipes_by_ingredient(food, MY_API_KEY)
     # pprint.pprint(recipes)
 
-    # pprint.pprint(get_recipe_info("Easy Homemade Apple Fritters", food))
+    # pprint.pprint(get_recipe_info("Easy Homemade Apple Fritters", food, MY_API_KEY))
 
-    # pprint.pprint(get_recipe_ingredients("Easy Homemade Apple Fritters", food))
+    # pprint.pprint(get_recipe_ingredients("Easy Homemade Apple Fritters", food, MY_API_KEY))
 
-    # print(get_recipe_summary("Easy Homemade Apple Fritters", food))
+    # print(get_recipe_summary("Easy Homemade Apple Fritters", food, MY_API_KEY))
 
-    # print(get_recipe_image("Easy Homemade Apple Fritters", food))
+    # print(get_recipe_image("Easy Homemade Apple Fritters", food, MY_API_KEY))
     
+
 
 if __name__ == "__main__":
     main()
