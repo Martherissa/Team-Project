@@ -50,9 +50,6 @@ def get_recipes_id_by_ingredient(ingredient, API_KEY):
     return dict
 
 
-# pprint.pprint(get_recipes_id_by_ingredient(food))
-
-
 def search_recipes_by_ingredient(ingredient, API_KEY):
     """
     Search recipes by inputing ingredient seperated by commas from Spoonacular API
@@ -68,6 +65,10 @@ def search_recipes_by_ingredient(ingredient, API_KEY):
 
 
 def get_recipet_id(recipe_name, ingredients, API_KEY):
+    '''
+    Input recipe name, ingredients, and API key
+    output the Spoonacular ID of the recipe
+    '''
     dict = get_recipes_id_by_ingredient(ingredients, API_KEY)
 
     for names in dict.keys():
@@ -77,6 +78,10 @@ def get_recipet_id(recipe_name, ingredients, API_KEY):
 
 
 def get_recipe_info(recipe_name, ingredient, API_KEY):
+    '''
+    Input recipe name, ingredients, and API key
+    Output more information about the recipe based on Spoonacular Website
+    '''
 
     id = get_recipet_id(recipe_name, ingredient, API_KEY)
 
